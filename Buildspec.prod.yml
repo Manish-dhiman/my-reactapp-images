@@ -6,7 +6,7 @@ phases:
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 653470767467.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=653470767467.dkr.ecr.us-east-1.amazonaws.com/my-first-image
-      - IMAGE_TAG=latest
+      - IMAGE_TAG
   build:
     commands:
       - docker build -t $REPOSITORY_URI -f Dockerfile.prod .
